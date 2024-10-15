@@ -1,0 +1,29 @@
+receivers:
+  otlpjsonfile:
+    include:
+      - "telemetry_dump/*.json"
+
+exporters:
+  otlp:
+    endpoint: 127.0.0.1:1417
+    tls:
+      insecure: true
+    compression: none
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlpjsonfile]
+      exporters: [otlp]
+  #   metrics:
+  #     receivers: [otlp]
+  #     exporters: [debug]
+  #     processors: [batch]
+  #   logs:
+  #     receivers: [otlp]
+  #     exporters: [debug]
+  #     processors: [batch]
+
+  telemetry:
+    metrics:
+      address: localhost:12345

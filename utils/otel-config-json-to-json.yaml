@@ -1,0 +1,22 @@
+receivers:
+  otlpjsonfile:
+    include:
+      - "telemetry_dump/*.json"
+
+exporters:
+ file:
+    path: "last_telemetry_dump.json"
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlpjsonfile]
+      exporters: [file]
+  #   metrics:
+  #     receivers: [otlp]
+  #     exporters: [debug]
+  #     processors: [batch]
+  #   logs:
+  #     receivers: [otlp]
+  #     exporters: [debug]
+  #     processors: [batch]
