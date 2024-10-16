@@ -20,5 +20,9 @@ build-backend = "hatchling.build"
 dev-dependencies = [
     "betterproto[compiler]~=2.0.0b7",
     "grpcio-tools~=1.66.2",
+    "pytest>=8.3.3",
     "ruff>=0.6.9",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
