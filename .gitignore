@@ -1,5 +1,0 @@
-.venv
-.venv_build
-.vscode/settings.json
-*.pyc
-# opentelemetry-betterproto/opentelemetry_betterproto/opentelemetry/proto/
